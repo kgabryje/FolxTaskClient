@@ -23,7 +23,9 @@ class ClientCreateIntegrationTests: ClientIntegrationTests() {
         ).body
         assertNotNull(productsBefore)
 
-        client.createProduct("new_product", 123F, ProductStatus.INSTOCK)
+        val newProductName = "abcdefghijklmnopqrstuvwxyz".split("").shuffled().take(15).joinToString("")
+
+        client.createProduct(newProductName, 123F, ProductStatus.INSTOCK)
         val productsAfter: List<Product>? = restTemplate.exchange(
                 client.uriProvider.readAllUri(),
                 HttpMethod.GET,
@@ -31,6 +33,7 @@ class ClientCreateIntegrationTests: ClientIntegrationTests() {
                 object: ParameterizedTypeReference<List<Product>>(){}
         ).body
         assertNotNull(productsAfter)
+        
         assertEquals(productsBefore!!.size + 1, productsAfter!!.size)
     }
 
