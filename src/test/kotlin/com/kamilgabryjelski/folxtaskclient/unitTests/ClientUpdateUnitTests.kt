@@ -14,8 +14,8 @@ import org.springframework.test.web.client.response.MockRestResponseCreators.wit
 
 @RunWith(SpringRunner::class)
 class ClientUpdateUnitTests: ClientUnitTests() {
-    val product1 = Product(1, "prod1", 123F, ProductStatus.WITHDRAWN)
-    val product2 = Product(2, "prod2", 234F, ProductStatus.INSTOCK)
+    private val product1 = Product(1, "prod1", 123F, ProductStatus.WITHDRAWN)
+    private val product2 = Product(2, "prod2", 234F, ProductStatus.INSTOCK)
 
     @Test
     fun testUpdateProduct() {

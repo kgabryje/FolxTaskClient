@@ -1,6 +1,5 @@
 package com.kamilgabryjelski.folxtaskclient.client
 
-import com.kamilgabryjelski.folxtaskclient.uri.UriConstants
 import com.kamilgabryjelski.folxtaskclient.model.Product
 import com.kamilgabryjelski.folxtaskclient.model.ProductStatus
 import com.kamilgabryjelski.folxtaskclient.uri.UriProvider
